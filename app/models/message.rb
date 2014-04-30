@@ -4,4 +4,8 @@ class Message < ActiveRecord::Base
 
   validates :sender, presence: true, strict: true
   validates :recipient, :subject, :body, presence: true
+
+  def self.new_to_old
+    order("messages.created_at DESC")
+  end
 end
