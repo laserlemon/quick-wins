@@ -1,0 +1,19 @@
+<h1>Messages</h1>
+<table id="messages">
+  <thead>
+    <tr>
+      <th>From</th>
+      <th>To</th>
+      <th>Subject</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @messages.each do |message| %>
+      <tr class="<%= message.read? ? "read" : "unread" %> message">
+        <td class="from"><%= message.sender.name %></td>
+        <td class="to"><%= message.recipient.name %></td>
+        <td class="subject"><%= message.subject %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
