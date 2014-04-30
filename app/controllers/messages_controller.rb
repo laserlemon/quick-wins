@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+  before_action :require_current_user
+
   def index
     @messages = current_user.received_messages.new_to_old
   end
@@ -14,6 +16,10 @@ class MessagesController < ApplicationController
   end
 
   private
+
+  def require_current_user
+    head :unauthorized unless current_user
+  end
 
   def current_user
     User.find_by(id: cookies[:current_user_id])
