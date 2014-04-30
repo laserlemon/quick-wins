@@ -9,5 +9,19 @@ module DOM
     def read?
       node["class"].split.include?("read")
     end
+
+    def selected?
+      checkbox.checked?
+    end
+
+    def select
+      checkbox.set(true)
+    end
+
+    private
+
+    def checkbox
+      @checkbox ||= node.find("input[type=checkbox]")
+    end
   end
 end

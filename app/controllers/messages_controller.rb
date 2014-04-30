@@ -3,6 +3,10 @@ class MessagesController < ApplicationController
     @messages = current_user.received_messages.new_to_old
   end
 
+  def mark_read
+    redirect_to messages_path
+  end
+
   private
 
   def current_user
