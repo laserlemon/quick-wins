@@ -4,6 +4,12 @@ class MessagesController < ApplicationController
   end
 
   def mark_read
+    @messages = current_user.received_messages.where(id: params[:message_ids])
+
+    @messages.each do |message|
+      message.update_attribute(:read, true)
+    end
+
     redirect_to messages_path
   end
 
