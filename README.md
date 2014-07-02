@@ -2,6 +2,11 @@
 
 _An example application to demonstrate "quick wins" for Rails performance_
 
+[![Build Status](https://img.shields.io/travis/laserlemon/quick-wins/master.svg?style=flat)](https://travis-ci.org/laserlemon/quick-wins)
+[![Code Climate](https://img.shields.io/codeclimate/github/laserlemon/quick-wins.svg?style=flat)](https://codeclimate.com/github/laserlemon/quick-wins)
+[![Code Coverage](http://img.shields.io/codeclimate/coverage/github/laserlemon/quick-wins.svg?style=flat)](https://codeclimate.com/github/laserlemon/quick-wins)
+[![Dependency Status](https://img.shields.io/gemnasium/laserlemon/quick-wins.svg?style=flat)](https://gemnasium.com/laserlemon/quick-wins)
+
 ## Background
 
 This repository contains a Rails application named "Inbox."
