@@ -1,24 +1,27 @@
-<%= form_tag mark_read_messages_path, method: :put do %>
-  <h1>Messages</h1>
-  <table id="messages">
-    <thead>
-      <tr>
-        <th></th>
-        <th>From</th>
-        <th>To</th>
-        <th>Subject</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @messages.each do |message| %>
-        <tr class="<%= message.read? ? "read" : "unread" %> message">
-          <td><%= check_box_tag "message_ids[]", message.id %></td>
-          <td class="from"><%= message.sender.name %></td>
-          <td class="to"><%= message.recipient.name %></td>
-          <td class="subject"><%= message.subject %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <%= submit_tag "Mark as Read" %>
-<% end %>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <%= form_tag mark_read_messages_path, method: :put do %>
+      <table id="messages" class="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>From</th>
+            <th>To</th>
+            <th>Subject</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @messages.each do |message| %>
+            <tr class="<%= message.read? ? "read" : "unread" %> message">
+              <td class="action"><%= check_box_tag "message_ids[]", message.id %></td>
+              <td class="from"><%= message.sender.name %></td>
+              <td class="to"><%= message.recipient.name %></td>
+              <td class="subject"><%= message.subject %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <%= submit_tag "Mark as Read", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
