@@ -1,3 +1,8 @@
+<% content_for :links do %>
+  <%= link_to logout_path, method: :delete do %>
+    <span class="glyphicon glyphicon-log-out" title="Log Out"></span>
+  <% end %>
+<% end %>
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
     <%= form_tag mark_read_messages_path, method: :put do %>

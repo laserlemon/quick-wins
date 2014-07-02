@@ -3,4 +3,12 @@ class User < ActiveRecord::Base
   has_many :received_messages, class_name: "Message", foreign_key: "recipient_id"
 
   validates :name, presence: true
+  validates :username, presence: true, uniqueness: true
+
+  has_secure_password
+
+  def self.authenticate(username, password)
+    user = User.find_by(username: username)
+    user && user.authenticate(password)
+  end
 end

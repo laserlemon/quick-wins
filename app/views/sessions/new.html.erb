@@ -1,0 +1,15 @@
+<%= form_tag login_path, id: "login-form", role: "form" do %>
+  <% if flash[:alert].present? %>
+    <div class="alert alert-danger" role="alert">
+      <%= flash[:alert] %>
+    </div>
+  <% end %>
+  <% if flash[:success].present? %>
+    <div class="alert alert-success" role="alert">
+      <%= flash[:success] %>
+    </div>
+  <% end %>
+  <input type="text" name="username" class="form-control" placeholder="Username" required autofocus>
+  <input type="password" name="password" class="form-control" placeholder="Password" required>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Log In</button>
+<% end %>
