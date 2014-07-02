@@ -40,6 +40,7 @@ group :development, :test do
   gem "database_cleaner", "~> 1.2"
   gem "domino", "~> 0.5.0"
   gem "factory_girl_rails", "~> 4.4"
+  gem "faker", "~> 1.3"
   gem "pry-rails"
   gem "rspec-rails", "~> 2.14"
 end
