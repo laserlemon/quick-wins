@@ -13,7 +13,7 @@
         <tbody>
           <% @messages.each do |message| %>
             <tr class="<%= message.read? ? "read" : "unread" %> message">
-              <td class="action"><%= check_box_tag "message_ids[]", message.id %></td>
+              <td class="action"><%= check_box_tag("message_ids[]", message.id) unless message.read? %></td>
               <td class="from"><%= message.sender.name %></td>
               <td class="to"><%= message.recipient.name %></td>
               <td class="subject"><%= message.subject %></td>
