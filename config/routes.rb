@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   post "login" => "sessions#create"
   delete "logout" => "sessions#destroy"
 
-  resources :messages, only: [:index] do
-    put "mark-read", on: :collection
-  end
+  put "mark-read" => "messages#mark_read", as: :mark_read_messages
+  root to: "messages#index", as: :messages
 end
