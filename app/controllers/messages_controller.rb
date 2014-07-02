@@ -2,7 +2,7 @@ class MessagesController < ApplicationController
   before_action :require_current_user
 
   def index
-    @messages = current_user.received_messages.new_to_old
+    @messages = current_user.received_messages.new_to_old.includes(:sender)
   end
 
   def mark_read
