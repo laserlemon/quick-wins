@@ -40,4 +40,6 @@ Rails.application.configure do
   # Disable query caching to more clearly demonstrate query-related
   # performance wins.
   config.middleware.delete "ActiveRecord::QueryCache"
+
+  config.action_controller.perform_caching = true
 end
