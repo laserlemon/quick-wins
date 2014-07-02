@@ -11,7 +11,7 @@ module DOM
     end
 
     def selected?
-      checkbox.checked?
+      checkbox ? checkbox.checked? : false
     end
 
     def select
@@ -21,7 +21,7 @@ module DOM
     private
 
     def checkbox
-      @checkbox ||= node.find("input[type=checkbox]")
+      @checkbox ||= node.first("input[type=checkbox]")
     end
   end
 end
