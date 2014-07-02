@@ -4,5 +4,11 @@ before_script:
 branches:
   only:
     - master
+env:
+  global:
+    secure: | # CODECLIMATE_REPO_TOKEN
+      JkaYeNKcW6c3ujuR7uQailmBeahwk/73QQAA7xvoeO5KQKOCeXQ8Wpz91LfJ
+      4FFXN/EQz93+VHCIvX0EJNzbvDKJIa3kNq9dLQNsS4VceNorN/00iZuZ3Y+w
+      ESG1GJ4kr1PtU+LCKzkc1+8eG5Y3KmRL1R6mnvGS19p7k1YXjao=
 language: ruby
 rvm: "2.1"

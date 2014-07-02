@@ -37,6 +37,7 @@ gem 'bcrypt', '~> 3.1'
 
 group :development, :test do
   gem "capybara", "~> 2.2"
+  gem "codeclimate-test-reporter", require: false
   gem "database_cleaner", "~> 1.2"
   gem "domino", "~> 0.5.0"
   gem "factory_girl_rails", "~> 4.4"
