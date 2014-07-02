@@ -18,8 +18,10 @@ class MessagesController < ApplicationController
   private
 
   def require_current_user
-    flash[:alert] = "Please log in first."
-    redirect_to login_path unless current_user
+    unless current_user
+      flash[:alert] = "Please log in first."
+      redirect_to login_path
+    end
   end
 
   def current_user
