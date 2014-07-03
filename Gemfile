@@ -19,5 +19,5 @@ group :development, :test do
   gem "factory_girl_rails", "~> 4.4"
   gem "faker", "~> 1.3"
   gem "pry-rails"
-  gem "rspec-rails", "~> 2.14"
+  gem "rspec-rails", "~> 3.0"
 end
