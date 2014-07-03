@@ -62,4 +62,11 @@ feature "Message List" do
     expect(dom_messages[3]).to be_read
     expect(dom_messages[3]).not_to be_selected
   end
+
+  scenario "A user must log in before viewing messages" do
+    visit(messages_path)
+
+    expect(DOM::Message.count).to be_zero
+    expect(current_path).to eq(login_path)
+  end
 end
