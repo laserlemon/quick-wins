@@ -11,7 +11,7 @@ describe "Message List Performance", type: :feature do
 
   def measure(&block)
     time = Benchmark.realtime(&block)
-    example.description << " (#{time})"
+    RSpec.current_example.description << " (#{time})"
   end
 
   it "is fast!" do

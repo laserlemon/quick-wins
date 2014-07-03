@@ -16,7 +16,7 @@ feature "Message List" do
     visit(messages_path)
 
     dom_messages = DOM::Message.all
-    expect(dom_messages).to have(2).messages
+    expect(dom_messages.count).to eq(2)
     expect(dom_messages[0].from).to eq("Jack")
     expect(dom_messages[0].to).to eq("Jane")
     expect(dom_messages[0].subject).to eq("Hi!")
