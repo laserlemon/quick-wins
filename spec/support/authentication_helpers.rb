@@ -22,6 +22,6 @@ RSpec.configure do |config|
   config.include(AuthenticationHelpers)
 
   config.before(type: :feature) do
-    ActionDispatch::Request.any_instance.stub(:cookie_jar) { page.cookies }
+    allow_any_instance_of(ActionDispatch::Request).to receive(:cookie_jar) { page.cookies }
   end
 end
